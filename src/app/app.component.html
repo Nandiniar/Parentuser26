@@ -1,1 +1,10 @@
-
+<h1>Pass data to child component</h1>
+<!-- <app-user user="Nandini Arora"></app-user> aise karne se dataa parent se user me jayega this is known as static data -->
+ <app-user [user]="username" city="Noida"></app-user> <!-- yeh dynamic way hai-->
+ <select #selecteduser (change)="onUserchange(selecteduser.value)" name="" id="">
+    <option value="Nandini">Nandi</option>
+    <option value="Sam">Sam</option>
+    <option value="Peter">Peter</option>
+    <option value="Tommy">Tommy</option>
+ </select>
+ <app-user [user]="selecteduser.value"></app-user> <!-- yeh issliye agar hume wo value screen pe chaiye ho jo wo select karega-->
